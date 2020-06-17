@@ -10,7 +10,24 @@ public class Solution {
      * @param ts
      *
      */
+	
     public static double closestToZero(double[] ts){
-            return 0;
-    }
+    	
+    	if (ts.length == 0 )
+    		return 0;
+    	else {
+	    	double tempMin = ts[0];
+	    	for (double value : ts) 
+	    	{ 
+	    	    if (Math.abs(value) < Math.abs(tempMin)) {
+	    	    	tempMin = value;
+	    	    }
+	    	    
+	    	    else if (Math.abs(value) == Math.abs(tempMin)) {
+	    	    	tempMin = Math.max(value, tempMin);
+	    	    }
+	    	}
+	    	return tempMin;
+	    }
+	}
 }
